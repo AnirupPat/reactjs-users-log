@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import AddUser from './component/Users/AddUser';
 import './App.css';
 import UsersList from './component/Users/UsersList';
 
 function App() {
   const [userList, setUserList] = useState([]);
-  
+
   const handleAddUser = (name, age) => {
     console.log(name, age)
     setUserList(prevState => {
@@ -14,10 +14,10 @@ function App() {
     console.log(userList)
   }
   return (
-    <div>
+    <React.Fragment>
       <AddUser onAddUser={handleAddUser} />
       <UsersList users={userList} />
-    </div>
+    </React.Fragment>
   );
 }
 
